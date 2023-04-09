@@ -11,10 +11,10 @@ const CONFIG = {
 	// └─┘┴ ┴└─┘┴└─┘└─┘
 
 	// General
-	name: 'John',
-	imageBackground: false,
-	openInNewTab: true,
-	twelveHourFormat: false,
+	name: 'Mac',
+	imageBackground: true,
+	openInNewTab: false,
+	twelveHourFormat: true,
 
 	// Greetings
 	greetingMorning: 'Good morning!',
@@ -23,23 +23,23 @@ const CONFIG = {
 	greetingNight: 'Go to Sleep!',
 
 	// Layout
-	bentoLayout: 'bento', // 'bento', 'lists', 'buttons'
+	bentoLayout: 'lists', // 'bento', 'lists', 'buttons'
 
 	// Weather
-	weatherKey: 'InsertYourAPIKeyHere123456', // Write here your API Key
+	weatherKey: 'f4901f20bd57da8804b62dd579c52198',
 	weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
 	weatherUnit: 'C', // 'F', 'C'
 	language: 'en', // More languages in https://openweathermap.org/current#multi
 
-	trackLocation: true, // If false or an error occurs, the app will use the lat/lon below
-	defaultLatitude: '37.775',
-	defaultLongitude: '-122.419',
+	trackLocation: false, // If false or an error occurs, the app will use the lat/lon below
+	defaultLatitude: '45.421532',
+	defaultLongitude: '-75.697189',
 
 	// Autochange
-	autoChangeTheme: true,
+	autoChangeTheme: false,
 
 	// Autochange by OS
-	changeThemeByOS: true,
+	changeThemeByOS: false,
 
 	// Autochange by hour options (24hrs format, string must be in: hh:mm)
 	changeThemeByHour: false,
@@ -50,6 +50,10 @@ const CONFIG = {
 	// ├┴┐│ │ │  │ │ ││││└─┐
 	// └─┘└─┘ ┴  ┴ └─┘┘└┘└─┘
 
+    //for some reason it sorts icons by id in this order
+    //1 2 5 
+    //3 4 6
+    //so I switched 3 and 5 ids
 	firstButtonsContainer: [
 		{
 			id: '1',
@@ -59,34 +63,34 @@ const CONFIG = {
 		},
 		{
 			id: '2',
-			name: 'Mail',
+			name: 'Outlook',
 			icon: 'mail',
-			link: 'https://mail.protonmail.com/',
-		},
-		{
-			id: '3',
-			name: 'Todoist',
-			icon: 'trello',
-			link: 'https://todoist.com',
-		},
-		{
-			id: '4',
-			name: 'Calendar',
-			icon: 'calendar',
-			link: 'https://calendar.google.com/calendar/r',
+			link: 'https://outlook.live.com/mail/0'
 		},
 		{
 			id: '5',
-			name: 'Reddit',
+			name: 'Gmail',
+			icon: 'mail-open',
+			link: 'https://outlook.live.com/mail/0'
+		},
+		{
+			id: '3',
+			name: 'Jira',
 			icon: 'glasses',
 			link: 'https://reddit.com',
 		},
 		{
+			id: '4',
+			name: 'Datadog',
+			icon: 'calendar',
+			link: 'https://calendar.google.com/calendar/r',
+		},
+		{
 			id: '6',
-			name: 'Odysee',
+			name: '',
 			icon: 'youtube',
 			link: 'https://odysee.com/',
-		},
+		}
 	],
 
 	secondButtonsContainer: [
@@ -135,25 +139,23 @@ const CONFIG = {
 	// First Links Container
 	firstlistsContainer: [
 		{
-			icon: 'music',
+			icon: 'newspaper',
 			id: '1',
 			links: [
 				{
-					name: 'Inspirational',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-				},
-				{
-					name: 'Classic',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-				},
-				{
-					name: 'Oldies',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-				},
-				{
-					name: 'Rock',
-					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-				},
+					name: 'Current Events',
+					link: 'https://en.wikipedia.org/wiki/Portal:Current_events',
+				}, {
+                    name: 'Hackernews',
+                    link: 'https://news.ycombinator.com/',
+                }, {
+					name: 'Pocket',
+					link: 'https://getpocket.com/saves?src=recent-saves',
+				}, {
+                    name: 'Podcasts',
+                    link: 'https://play.pocketcasts.com/podcasts'
+                }
+
 			],
 		},
 		{
@@ -161,21 +163,18 @@ const CONFIG = {
 			id: '2',
 			links: [
 				{
-					name: 'Linkedin',
-					link: 'https://www.linkedin.com',
-				},
-				{
-					name: 'Dribbble',
-					link: 'https://www.dribbble.com',
-				},
-				{
-					name: 'Trello',
-					link: 'https://www.trello.com',
-				},
-				{
-					name: 'Slack',
-					link: 'https://www.slack.com',
-				},
+					name: 'Current Events',
+					link: 'https://en.wikipedia.org/wiki/Portal:Current_events',
+				}, {
+					name: '',
+					link: 'https://www.reddit.com',
+				}, {
+                    name: 'Hackernews',
+                    link: 'https://news.ycombinator.com/',
+                }, {
+					name: 'Pocket',
+					link: 'https://getpocket.com/saves?src=recent-saves',
+				}
 			],
 		},
 	],
@@ -187,15 +186,15 @@ const CONFIG = {
 			id: '1',
 			links: [
 				{
-					name: 'Spotify',
+					name: 'Github',
 					link: 'https://www.spotify.com',
 				},
 				{
-					name: 'Reddit',
+					name: 'Jira',
 					link: 'https://www.reddit.com',
 				},
 				{
-					name: 'Hashnode',
+					name: 'Confluence',
 					link: 'https://www.hashnode.com',
 				},
 				{
